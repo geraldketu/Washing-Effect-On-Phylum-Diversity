@@ -1,230 +1,115 @@
-🧼 The Edge – SCI 101L Microbiome Diversity Project
-📘 Project Title
-How Showering Affects Belly Button Microbiome Phylum Diversity
 
-👥 Group Name
-The Edge
-
-🧪 Purpose
+## Purpose  
 This project investigates the relationship between personal hygiene habits—specifically shower frequency—and belly button microbiome phylum diversity. Our broader goal is to better understand how modern hygiene practices may unintentionally reduce microbial diversity on the skin, which plays a key role in immune health and skin homeostasis.
 
-🧬 Hypothesis
+## Hypothesis  
 We hypothesized that increased shower frequency would lead to reduced phylum diversity in the belly button microbiome.
 
-📊 Dataset
-Our dataset was sourced from a belly button microbiome survey and included:
+## Dataset  
+Our dataset was sourced from a belly button microbiome survey and included:  
+- Participant metadata (e.g., gender, age, shower frequency)  
+- Phylum-level counts of microbial species per participant  
+- Alpha-diversity metrics (Shannon and Simpson indices)  
 
-Participant metadata (e.g., gender, age, shower frequency)
+While we initially considered using [Phinch](https://phinch.org/) for data visualization, we transitioned to Python notebooks due to limitations in format compatibility and data manipulation flexibility.
 
-Phylum-level counts of microbial species per participant
+## Methods
 
-Alpha-diversity metrics (Shannon and Simpson indices)
+### 1. Data Cleaning  
+- Removed missing or inconsistent entries  
+- Extracted relevant variables: shower frequency (independent) and phylum counts/diversity (dependent)
 
-While we initially considered using Phinch for data visualization, we transitioned to Python notebooks due to limitations in format compatibility and data manipulation flexibility.
+### 2. Statistical Analysis  
 
-🧮 Methods
-1. Data Cleaning
-Removed missing or inconsistent entries
+#### Pearson’s Correlation  
+**Formula**:  
+Let $X$ = shower frequency and $Y$ = phylum count.
 
-Extracted relevant variables: shower frequency (independent) and phylum counts/diversity (dependent)
+**Covariance**:  
+$$
+\text{Cov}(X, Y) = \frac{1}{n - 1} \sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})
+$$
 
-2. Statistical Analysis
-Pearson’s Correlation
-Formula:
+**Pearson’s correlation coefficient**:  
+$$
+r = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}
+$$
 
-𝑟
-=
-C
-o
-v
-(
-𝑋
-,
-𝑌
-)
-𝜎
-𝑋
-⋅
-𝜎
-𝑌
-r= 
-σ 
-X
-​
- ⋅σ 
-Y
-​
- 
-Cov(X,Y)
-​
- 
-where covariance measures how 
-𝑋
-X and 
-𝑌
-Y vary together, and 
-𝜎
-σ is standard deviation.
+**Results**:  
+- $r = 0.0106$: Indicates a negligible linear relationship  
+- $p = 0.8957$: High p-value suggests the observed correlation is not statistically significant  
 
-Results:
+#### Linear Regression  
+**Model**:  
+$$
+y = \beta_0 + \beta_1 x
+$$
 
-r = 0.0106: Indicates a negligible linear relationship between shower frequency and phylum diversity.
+Where:
+- $y$ = predicted phylum count  
+- $x$ = shower frequency  
+- $\beta_0$ = intercept  
+- $\beta_1$ = slope
 
-p = 0.8957: High p-value suggests the observed correlation is not statistically significant.
+**Results**:  
+- Intercept ($\beta_0$) = 6.02: Baseline phylum count when shower frequency is zero  
+- Slope ($\beta_1$) = 0.01: Each additional shower per week is associated with an increase of 0.01 phyla  
+- $R^2 = 0.000$: Shower frequency explains none of the variation in phylum diversity  
 
-Linear Regression
-Model:
+### 3. Justification for Method Selection  
+- **ANOVA**: Requires categorical independent variables  
+- **Chi-Square**: Suitable for categorical data, not continuous variables  
+- **Grubbs' Test**: Used to detect outliers, not relationships between variables  
 
-𝑦
-=
-𝛽
-0
-+
-𝛽
-1
-𝑥
-y=β 
-0
-​
- +β 
-1
-​
- x
-where 
-𝑦
-y = phylum count, 
-𝑥
-x = shower frequency.
+## Visualization  
+- Bar graphs of phylum counts across shower frequency  
+- Scatterplot with regression line for visualizing trends  
 
-Results:
+## Interpretation  
+The negligible correlation and regression results suggest that shower frequency does not significantly impact belly button microbiome phylum diversity. This challenges our hypothesis and indicates that other factors may play a more substantial role.
 
-Intercept (β₀) = 6.02: Baseline phylum count when shower frequency is zero.
+## Key Concepts  
 
-Slope (β₁) = 0.01: Each additional shower per week is associated with an increase of 0.01 phyla, a negligible effect.
+### Covariance  
+Measures how two variables vary together:
 
-R² = 0.000: Shower frequency explains none of the variation in phylum diversity.
+$$
+\text{Cov}(X, Y) = \frac{1}{n - 1} \sum (X_i - \bar{X})(Y_i - \bar{Y})
+$$
 
-3. Justification for Method Selection
-ANOVA: Requires categorical independent variables; our independent variable (shower frequency) is continuous.
+- Positive covariance: variables increase together  
+- Negative covariance: one increases while the other decreases  
 
-Chi-Square: Suitable for categorical data; not ideal for continuous counts or correlation.
+### Shannon Diversity Index  
+A measure of both species richness and evenness.
 
-Grubbs' Test: Used to detect outliers; not appropriate for modeling relationships between variables.
+**Formula**:  
+$$
+H' = -\sum_{i=1}^S p_i \ln(p_i)
+$$
 
-📈 Visualization
-Created bar graphs to show differences in phylum counts across shower frequencies.
+Where:
+- $p_i$ is the proportion of species $i$  
+- $S$ is the total number of species  
 
-Used regression plots to display trendlines and linear relationships.
+### Simpson Diversity Index  
+Emphasizes dominant species by squaring proportions.
 
-🧪 Interpretation
-The negligible correlation and regression results suggest that shower frequency does not significantly impact belly button microbiome phylum diversity.
+**Formula**:  
+$$
+D = \sum_{i=1}^S p_i^2
+$$
 
-This challenges the initial hypothesis and indicates that other factors may play a more substantial role in influencing microbial diversity.
+Lower values indicate higher diversity.
 
-📚 Key Concepts
-Covariance
-Measures how two variables change together.
+## Limitations  
+- Small sample size  
+- Self-reported shower frequency may introduce bias  
+- Focused only on phylum-level diversity  
 
-Positive covariance indicates that variables increase together; negative covariance indicates that as one increases, the other decreases.
+## Files Included  
+- `data_cleaning.ipynb`: Data loading and preprocessing  
+- `modeling.ipynb`: Correlation and regression analysis  
+- `presentation.pptx`: Project slides  
+- `dataset_metadata.csv`: Participant metadata  
 
-Shannon Diversity Index (H′)
-Formula:
-
-𝐻
-′
-=
-−
-∑
-𝑖
-=
-1
-𝑆
-𝑝
-𝑖
-ln
-⁡
-(
-𝑝
-𝑖
-)
-H 
-′
- =− 
-i=1
-∑
-S
-​
- p 
-i
-​
- ln(p 
-i
-​
- )
-where 
-𝑆
-S is the total number of species and 
-𝑝
-𝑖
-p 
-i
-​
-  is the proportion of species 
-𝑖
-i.
-
-Sensitive to both the richness (number of species) and evenness (distribution of species) in a community.
-
-Simpson Diversity Index (D)
-Formula:
-
-𝐷
-=
-∑
-𝑖
-=
-1
-𝑆
-𝑝
-𝑖
-2
-D= 
-i=1
-∑
-S
-​
- p 
-i
-2
-​
- 
-where 
-𝑝
-𝑖
-p 
-i
-​
-  is the proportion of species 
-𝑖
-i.
-
-Emphasizes the dominance of species in a community; lower values indicate higher diversity.
-
-⚠️ Limitations
-Small sample size may limit the generalizability of results.
-
-Self-reported shower frequency may introduce bias.
-
-Focused only on phylum-level diversity; genus or species-level analyses may provide more detailed insights.
-
-📂 Files Included
-data_cleaning.ipynb: Data loading and preprocessing.
-
-modeling.ipynb: Correlation and regression analysis.
-
-presentation.pptx: Project presentation slides.
-
-dataset_metadata.csv: Metadata associated with the dataset.
-
-✅ Conclusion
-Our analysis indicates that shower frequency has a negligible impact on belly button microbiome phylum diversity. This suggests that other factors, such as genetics, environment, or diet, may play more significant roles in shaping the skin microbiome.
