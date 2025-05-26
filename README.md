@@ -1,11 +1,5 @@
 # Showering and Belly Button Microbiome Diversity
 
-## Project Title  
-**How Showering Affects Belly Button Microbiome Phylum Diversity**
-
-## Author  
-**Gerald Ketu Ndawula**
-
 ## Purpose  
 In this project, I explored whether the frequency of showering affects phylum-level diversity in the belly button microbiome. The idea was to better understand how modern hygiene habits may influence our skin’s microbial ecosystem.
 
@@ -18,7 +12,6 @@ I used a cleaned version of the Belly Button Biodiversity dataset, which include
 - Microbial species count by phylum
 - Diversity indices such as Shannon and Simpson
 
-Although I was originally advised to use Phinch (a browser-based microbiome visualization tool), I decided against it because it was restrictive in format and didn’t allow the kind of statistical modeling and preprocessing I needed. Python offered much more control over the analysis.
 
 ## Methods
 
@@ -74,8 +67,4 @@ Formula:
 ## Conclusion  
 The analysis shows no statistically significant relationship between how often someone showers and how diverse their belly button microbiome is. While I expected more frequent showering to reduce diversity, the data suggests otherwise—or at least that any effect is too small to detect with this dataset.
 
-## Files in This Repo  
-- `data_cleaning.ipynb`: Code for preprocessing the data  
-- `modeling.ipynb`: Correlation and regression modeling  
-- `presentation.pptx`: Slide deck  
-- `README.md`: This file  
+ 
