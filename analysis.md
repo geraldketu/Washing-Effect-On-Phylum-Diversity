@@ -9,7 +9,6 @@ From `modeling.ipynb`, linear regression of **NumPhylum** on **WashFreq**:
 | Intercept (β₀)                    | 6.02    |
 | Slope (β₁)                        | 0.01    |
 
-![Wash vs Phyla Scatter + Fit](./images/wash_vs_phylum.png)
 
 ## Interpretation  
 - **R² ≈ 0**: Wash frequency explains virtually none of the variation in phylum richness.  
