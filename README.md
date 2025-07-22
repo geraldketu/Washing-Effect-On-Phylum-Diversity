@@ -9,6 +9,7 @@ In this project, I explored whether the frequency of belly‑button washing infl
 I hypothesized that increased wash frequency would correlate with decreased phylum richness, as over‑cleansing might remove loosely attached taxa.
 
 ## Dataset  
+- **Source** [Rob Dunn Lab, NC State, bellybutton dataset](https://robdunnlab.com/projects/belly-button-biodiversity/)
 - **OTU counts** aggregated at the phylum rank (raw counts per sample)  
 - **Metadata** containing sample `ID` and `Wash_Freq of BB (# times per week)`  
 
