@@ -83,9 +83,9 @@ df.to_csv('data/clean_phylum_washFreq_BB.csv', index=False)
 
 Fit a simple linear model:
 
-\[
+$$
 \text{NumPhylum} = \beta_0 + \beta_1 \times \text{WashFreq}
-\]
+$$
 
 - **β₀ (intercept):** baseline phylum count  
 - **β₁ (slope):** change in phylum count per additional wash/week  
