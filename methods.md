@@ -1,6 +1,5 @@
 
-```markdown
-<!-- methods.md -->
+
 
 # Data Cleaning & Statistical Methods
 
