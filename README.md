@@ -1,6 +1,6 @@
 <!-- README.md -->
 
-# Washing Effect on Phylum Diversity
+# How does showering affect your bellybutton Microbiome ?
 
 ## Purpose  
 In this project, I explored whether the frequency of belly‑button washing influences phylum‑level microbial richness. The goal was to understand if more frequent washing disrupts or reduces the number of distinct phyla present.
