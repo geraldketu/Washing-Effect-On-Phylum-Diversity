@@ -21,19 +21,19 @@ otu.drop(columns=[
     'Kingdom/Domain', 'Class', 'Order',
     'Family', 'Genus', 'Family_Genus'
 ], inplace=True)
-````
+```
 
 ### 3. Aggregate by Phylum
 -Sum OTU counts so each row corresponds to one phylum
 
--Reset the index to turn Phylum back into a column
+-Reset the index to turn `Phylum` back into a column
 
 ``` python
 otu = otu.groupby('Phylum').sum().reset_index()
 ```
 
 ### 4. Compute Phylum Richness
--Transpose the table so each row is a sample (ID) and each column a phylum
+-Transpose the table so each row is a sample (`ID`) and each column a phylum
 
 -Count the number of phyla with nonzero counts for each sample
 
@@ -48,8 +48,8 @@ otu_t = (
 otu_t['NumPhylum'] = (otu_t.drop(columns='ID') > 0).sum(axis=1)
 ```
 ### 5 . Merge with Wash Frequency
--Select only the ID and wash frequency columns from metadata
--Inner‐join with the phylum richness table on ID
+-Select only the `ID` and wash frequency columns from metadata
+-Inner‐join with the phylum richness table on `ID`
 
 ```python
 
@@ -59,7 +59,7 @@ df = otu_t.merge(meta_clean, on='ID', how='inner')
 ```
 
 ### 6. Handle Missing Values
--Replace "Unknown" wash frequencies with NaN
+-Replace `Unknown` wash frequencies with `NaN`
 
 -Drop samples lacking a numeric wash frequency
 
