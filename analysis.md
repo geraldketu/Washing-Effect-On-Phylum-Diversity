@@ -1,7 +1,4 @@
 
-```markdown
-<!-- analysis.md -->
-
 # Results & Analysis
 
 From `modeling.ipynb`, linear regression of **NumPhylum** on **WashFreq**:
@@ -22,6 +19,6 @@ From `modeling.ipynb`, linear regression of **NumPhylum** on **WashFreq**:
 ### What This Tells Us  
 Phylum‐level richness remains stable (~6 phyla/sample) regardless of washing frequency. This suggests that routine washing does not significantly alter which major phyla colonize the belly button. Other factors—such as host biology or environmental exposure—likely drive large‑scale phylum diversity.
 
----
+
 
 _For full details and code, see `notebooks/modeling.ipynb`._
