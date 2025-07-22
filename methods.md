@@ -13,7 +13,7 @@ meta = pd.read_excel(xls, sheet_name=1)
 ```
 
 ### 2. Prune Taxonomy Columns
--Drop all taxonomic ranks except Phylum
+-Drop all taxonomic ranks except    `Phylum`
 -Keep only the columns needed for aggregation
 
 ```python
